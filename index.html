@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bench 42 — 3D Printing & IoT Technology</title>
+  <meta name="description" content="Bench 42 LLC builds custom robots, smart automation systems, and IoT hardware out of Central Florida.">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #000;
+      color: #fff;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      line-height: 1.6;
+    }
+
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
+
+    /* ── Header ── */
+    header { border-bottom: 1px solid #1a1a1a; padding: 1.5rem 0; }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; }
+
+    .logo-svg { height: 44px; width: auto; }
+
+    nav a {
+      color: #666;
+      text-decoration: none;
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      margin-left: 2rem;
+      font-family: 'Orbitron', sans-serif;
+      transition: color 0.2s;
+    }
+    nav a:hover { color: #fff; }
+
+    /* ── Hero ── */
+    .hero { padding: 6rem 0 5rem; border-bottom: 1px solid #1a1a1a; }
+
+    .hero h1 {
+      font-family: 'Orbitron', 'Arial Black', sans-serif;
+      font-size: clamp(2rem, 5vw, 3.25rem);
+      font-weight: 900;
+      line-height: 1.15;
+      margin: 1.75rem 0 1rem;
+      letter-spacing: -0.01em;
+    }
+    .hero h1 .accent { color: #3A8EFF; }
+
+    .hero-rule { width: 72px; height: 2px; background: #3A8EFF; margin: 1.75rem 0; }
+
+    .hero p { font-size: 1.1rem; color: #777; max-width: 520px; margin-bottom: 2.5rem; }
+
+    .btn {
+      display: inline-block;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: #3A8EFF;
+      border: 1.5px solid #3A8EFF;
+      padding: 0.8rem 2rem;
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s;
+    }
+    .btn:hover { background: #3A8EFF; color: #000; }
+
+    /* ── Builds ── */
+    .builds { padding: 5rem 0; border-bottom: 1px solid #1a1a1a; }
+
+    .section-label {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 400;
+      letter-spacing: 0.22em;
+      color: #3A8EFF;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+
+    .section-title {
+      font-family: 'Orbitron', sans-serif;
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      font-weight: 700;
+      margin-bottom: 3rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1.5px;
+      background: #1a1a1a;
+      border: 1.5px solid #1a1a1a;
+    }
+
+    .card { background: #000; padding: 2rem 1.75rem; }
+
+    .card-num {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.65rem;
+      color: #3A8EFF;
+      letter-spacing: 0.18em;
+      margin-bottom: 1rem;
+    }
+
+    .card h3 { font-size: 1rem; font-weight: 600; margin-bottom: 0.6rem; }
+    .card p { font-size: 0.875rem; color: #555; line-height: 1.75; }
+
+    /* ── Contact ── */
+    .contact { padding: 5rem 0; border-bottom: 1px solid #1a1a1a; }
+
+    .contact-inner {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 3rem;
+      flex-wrap: wrap;
+    }
+
+    .contact-left { flex: 1; min-width: 260px; }
+    .contact-left h2 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      font-weight: 700;
+      margin: 0.75rem 0 1rem;
+    }
+    .contact-left p { color: #555; max-width: 340px; }
+
+    .contact-right { flex: 1; min-width: 260px; padding-top: 2.5rem; }
+
+    .contact-link {
+      display: block;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.95rem;
+      color: #fff;
+      text-decoration: none;
+      border-bottom: 1px solid #1a1a1a;
+      padding: 1rem 0;
+      transition: color 0.2s;
+    }
+    .contact-link:hover { color: #3A8EFF; }
+    .contact-link .label {
+      display: block;
+      font-size: 0.6rem;
+      color: #444;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      margin-bottom: 0.3rem;
+    }
+
+    /* ── Footer ── */
+    footer { padding: 2rem 0; }
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+    .footer-inner p { font-size: 0.72rem; color: #333; }
+    .footer-badge {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.58rem;
+      letter-spacing: 0.16em;
+      color: #2a2a2a;
+    }
+
+    @media (max-width: 600px) {
+      nav { display: none; }
+      .hero { padding: 4rem 0 3rem; }
+      .builds, .contact { padding: 3.5rem 0; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="container">
+    <div class="header-inner">
+      <svg class="logo-svg" viewBox="0 0 280 54" xmlns="http://www.w3.org/2000/svg">
+        <g transform="translate(26,27)">
+          <line x1="0" y1="-19" x2="0" y2="19" stroke="#fff" stroke-width="5" stroke-linecap="round"/>
+          <line x1="16.5" y1="-9.5" x2="-16.5" y2="9.5" stroke="#fff" stroke-width="5" stroke-linecap="round"/>
+          <line x1="-16.5" y1="-9.5" x2="16.5" y2="9.5" stroke="#fff" stroke-width="5" stroke-linecap="round"/>
+        </g>
+        <text x="58" y="36" font-family="Orbitron,'Arial Black',sans-serif" font-weight="900" font-size="28" fill="#fff">BENCH 42</text>
+      </svg>
+      <nav>
+        <a href="#builds">What We Build</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <!-- Asterisk mark in blue as section anchor -->
+    <svg width="56" height="56" viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <g transform="translate(28,28)">
+        <line x1="0" y1="-22" x2="0" y2="22" stroke="#3A8EFF" stroke-width="5.5" stroke-linecap="round"/>
+        <line x1="19.1" y1="-11" x2="-19.1" y2="11" stroke="#3A8EFF" stroke-width="5.5" stroke-linecap="round"/>
+        <line x1="-19.1" y1="-11" x2="19.1" y2="11" stroke="#3A8EFF" stroke-width="5.5" stroke-linecap="round"/>
+      </g>
+    </svg>
+    <h1>Custom robots.<br>Smart automation.<br><span class="accent">IoT that actually works.</span></h1>
+    <div class="hero-rule"></div>
+    <p>Bench 42 LLC designs and builds character robots, custom PCBs, 3D-printed hardware, and Home Assistant integrations — out of Central Florida.</p>
+    <a href="#contact" class="btn">GET IN TOUCH</a>
+  </div>
+</section>
+
+<!-- WHAT WE BUILD -->
+<section class="builds" id="builds">
+  <div class="container">
+    <p class="section-label">What We Build</p>
+    <h2 class="section-title">42 = * = builds anything.</h2>
+    <div class="grid">
+      <div class="card">
+        <p class="card-num">01</p>
+        <h3>Character Robots</h3>
+        <p>Life-size builds with real personality — K2-SO, Battle Droid, R2-D2, and more. Servo motion, custom audio, and full Home Assistant integration.</p>
+      </div>
+      <div class="card">
+        <p class="card-num">02</p>
+        <h3>3D Printing</h3>
+        <p>ABS, ASA, and PETG production. Custom enclosures, body panels, mounts, and parametric kits — designed to be printed, painted, and put to work.</p>
+      </div>
+      <div class="card">
+        <p class="card-num">03</p>
+        <h3>Custom PCBs</h3>
+        <p>KiCad design through JLCPCB fabrication. The Robot Brain Board standardizes ESP32 control across character builds — built to spec, built to sell.</p>
+      </div>
+      <div class="card">
+        <p class="card-num">04</p>
+        <h3>Home Assistant &amp; ESPHome</h3>
+        <p>WiFi-connected everything. Automations, dashboards, media players, and smart cart integrations. If it has a power switch, it can talk to HA.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="contact-inner">
+      <div class="contact-left">
+        <p class="section-label">Contact</p>
+        <h2>Let's build something.</h2>
+        <p>Based in Central Florida. Open to commissions, collaborations, and custom projects.</p>
+      </div>
+      <div class="contact-right">
+        <a href="mailto:info@bench42.com" class="contact-link">
+          <span class="label">Email</span>
+          info@bench42.com
+        </a>
+        <a href="https://bench42.com" class="contact-link">
+          <span class="label">Web</span>
+          bench42.com
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <p>© 2026 Bench 42 LLC &mdash; Florida Limited Liability Company</p>
+      <p class="footer-badge">BENCH 42 &nbsp;&middot;&nbsp; 3D PRINTING AND IOT TECHNOLOGY</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
