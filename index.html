@@ -256,10 +256,137 @@
       color: #222;
     }
 
+    /* ── Pricing ── */
+    .pricing { padding: 5rem 0; border-bottom: 1px solid #1a1a1a; }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5px;
+      background: #1a1a1a;
+      border: 1.5px solid #1a1a1a;
+      margin-top: 2.5rem;
+    }
+
+    .price-card {
+      background: #000;
+      padding: 2.25rem 2rem;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .price-card.highlight {
+      background: #050a14;
+      border-top: 3px solid #3A8EFF;
+    }
+
+    .price-badge {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.55rem;
+      letter-spacing: 0.2em;
+      color: #3A8EFF;
+      background: #0a1a30;
+      padding: 0.25rem 0.6rem;
+      display: inline-block;
+      margin-bottom: 1.25rem;
+      align-self: flex-start;
+    }
+
+    .price-tier {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      margin-bottom: 1.25rem;
+    }
+
+    .price-amount {
+      display: flex;
+      align-items: baseline;
+      gap: 0.6rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .price-main {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2rem;
+      font-weight: 900;
+      color: #fff;
+    }
+
+    .price-was {
+      font-size: 0.85rem;
+      color: #333;
+      text-decoration: line-through;
+    }
+
+    .price-note {
+      font-size: 0.75rem;
+      color: #444;
+      margin-bottom: 2rem;
+      letter-spacing: 0.04em;
+    }
+
+    .price-includes {
+      list-style: none;
+      flex: 1;
+    }
+
+    .price-includes li {
+      font-size: 0.85rem;
+      color: #666;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid #111;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      line-height: 1.5;
+    }
+
+    .price-includes li::before {
+      content: '—';
+      color: #3A8EFF;
+      flex-shrink: 0;
+      font-size: 0.75rem;
+      margin-top: 0.1rem;
+    }
+
+    .price-includes li.dim { color: #333; }
+    .price-includes li.dim::before { color: #222; }
+
+    .price-cta {
+      margin-top: 2rem;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: #3A8EFF;
+      border: 1.5px solid #1a3a6a;
+      padding: 0.7rem 1.25rem;
+      text-decoration: none;
+      text-align: center;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .price-cta:hover { background: #3A8EFF; color: #000; }
+    .price-card.highlight .price-cta { border-color: #3A8EFF; }
+
+    .pricing-note {
+      font-size: 0.78rem;
+      color: #333;
+      margin-top: 1.5rem;
+      letter-spacing: 0.03em;
+    }
+
+    @media (max-width: 700px) {
+      .pricing-grid { grid-template-columns: 1fr; }
+    }
+
     @media (max-width: 600px) {
       nav { display: none; }
       .hero { padding: 4rem 0 3rem; }
-      .builds, .voice, .contact { padding: 3.5rem 0; }
+      .builds, .voice, .pricing, .contact { padding: 3.5rem 0; }
     }
   </style>
 </head>
@@ -279,6 +406,7 @@
       </svg>
       <nav>
         <a href="#voice">How It Works</a>
+        <a href="#pricing">Pricing</a>
         <a href="#builds">What We Build</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -333,6 +461,75 @@
     </div>
 
     <p class="voice-close">This is what home automation feels like<br>when your house has <span style="color:#3A8EFF;">character</span> — and a builder behind it.</p>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing" id="pricing">
+  <div class="container">
+    <p class="section-label">HA Droid Connect</p>
+    <h2 class="section-title">Choose your kit.</h2>
+
+    <div class="pricing-grid">
+
+      <!-- CORE -->
+      <div class="price-card">
+        <span class="price-tier">Core</span>
+        <div class="price-amount">
+          <span class="price-main">$99.99</span>
+          <span class="price-was">$129.99</span>
+        </div>
+        <p class="price-note">Intro pricing</p>
+        <ul class="price-includes">
+          <li>HA Droid Connect board</li>
+          <li>XIAO ESP32-C3 pre-installed &amp; pre-flashed</li>
+          <li>Pololu 5V buck pre-installed</li>
+          <li>Plug in power. Open Home Assistant. Done.</li>
+          <li class="dim">DFPlayer Mini not included</li>
+          <li class="dim">PCA9685 not included</li>
+          <li class="dim">MicroSD not included</li>
+        </ul>
+        <a href="mailto:info@bench42.com?subject=HA Droid Connect — Core" class="price-cta">ORDER CORE</a>
+      </div>
+
+      <!-- BUILDER (highlight) -->
+      <div class="price-card highlight">
+        <span class="price-badge">MOST POPULAR</span>
+        <span class="price-tier">Builder</span>
+        <div class="price-amount">
+          <span class="price-main">$149.99</span>
+          <span class="price-was">$189.99</span>
+        </div>
+        <p class="price-note">Intro pricing</p>
+        <ul class="price-includes">
+          <li>Everything in Core</li>
+          <li>DFPlayer Mini module included</li>
+          <li>PCA9685 servo controller included</li>
+          <li>Audio + servos ready to connect</li>
+          <li class="dim">MicroSD not included</li>
+        </ul>
+        <a href="mailto:info@bench42.com?subject=HA Droid Connect — Builder" class="price-cta">ORDER BUILDER</a>
+      </div>
+
+      <!-- COMPLETE -->
+      <div class="price-card">
+        <span class="price-tier">Complete</span>
+        <div class="price-amount">
+          <span class="price-main">$179.99</span>
+          <span class="price-was">$229.99</span>
+        </div>
+        <p class="price-note">Intro pricing</p>
+        <ul class="price-includes">
+          <li>Everything in Builder</li>
+          <li>MicroSD pre-loaded with starter droid sounds</li>
+          <li>Power on. Your robot is already talking.</li>
+          <li>Nothing else to buy. Nothing left to figure out.</li>
+        </ul>
+        <a href="mailto:info@bench42.com?subject=HA Droid Connect — Complete" class="price-cta">ORDER COMPLETE</a>
+      </div>
+
+    </div>
+    <p class="pricing-note">Building out a full cast? 5-pack pricing available — email info@bench42.com</p>
   </div>
 </section>
 
