@@ -194,10 +194,72 @@
       color: #2a2a2a;
     }
 
+    /* ── Voice section ── */
+    .voice { padding: 5rem 0; border-bottom: 1px solid #1a1a1a; background: #030303; }
+
+    .voice-headline {
+      font-family: 'Orbitron', sans-serif;
+      font-size: clamp(1.75rem, 4vw, 2.75rem);
+      font-weight: 900;
+      line-height: 1.15;
+      margin-bottom: 1.75rem;
+    }
+    .voice-headline .accent { color: #3A8EFF; }
+
+    .voice-body { max-width: 620px; margin-bottom: 3rem; }
+    .voice-body p { font-size: 1.05rem; color: #666; line-height: 1.85; }
+    .voice-body p + p { margin-top: 1rem; }
+
+    .voice-close {
+      font-family: 'Orbitron', sans-serif;
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      font-weight: 700;
+      color: #fff;
+      margin-top: 2.5rem;
+    }
+
+    .notif-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5px;
+      background: #1a1a1a;
+      border: 1.5px solid #1a1a1a;
+    }
+
+    .notif-card {
+      background: #000;
+      padding: 1.75rem;
+      border-left: 3px solid #3A8EFF;
+    }
+
+    .notif-char {
+      display: block;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      color: #3A8EFF;
+      margin-bottom: 0.9rem;
+    }
+
+    .notif-msg {
+      font-size: 0.95rem;
+      color: #bbb;
+      line-height: 1.7;
+      font-style: italic;
+      margin-bottom: 1rem;
+    }
+
+    .notif-trigger {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.55rem;
+      letter-spacing: 0.14em;
+      color: #222;
+    }
+
     @media (max-width: 600px) {
       nav { display: none; }
       .hero { padding: 4rem 0 3rem; }
-      .builds, .contact { padding: 3.5rem 0; }
+      .builds, .voice, .contact { padding: 3.5rem 0; }
     }
   </style>
 </head>
@@ -216,6 +278,7 @@
         <text x="58" y="36" font-family="Orbitron,'Arial Black',sans-serif" font-weight="900" font-size="28" fill="#fff">BENCH 42</text>
       </svg>
       <nav>
+        <a href="#voice">How It Works</a>
         <a href="#builds">What We Build</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -238,6 +301,38 @@
     <div class="hero-rule"></div>
     <p>Bench 42 LLC designs and builds character robots, custom PCBs, 3D-printed hardware, and Home Assistant integrations — out of Central Florida.</p>
     <a href="#contact" class="btn">GET IN TOUCH</a>
+  </div>
+</section>
+
+<!-- VOICE SECTION -->
+<section class="voice" id="voice">
+  <div class="container">
+    <h2 class="voice-headline">Your house has<br>a <span class="accent">voice</span> now.</h2>
+    <div class="voice-body">
+      <p>Home Assistant tracks everything — the doorbell, the dryer, the garage, the package on the porch. Normally that means glancing at your phone.</p>
+      <p>With HA Droid Connect, it means K2-SO leans out from the corner and tells you the laundry's done. R2 whistles from across the room because someone rang the bell. The Battle Droid reports, deadpan, that the garage door has been open for twenty minutes.</p>
+      <p>The information is the same. The experience is completely different.</p>
+    </div>
+
+    <div class="notif-grid">
+      <div class="notif-card">
+        <span class="notif-char">K2-SO &nbsp;·&nbsp; LAUNDRY ROOM</span>
+        <p class="notif-msg">"The dryer cycle has completed. You're welcome, by the way."</p>
+        <span class="notif-trigger">TRIGGER: dryer.cycle_complete</span>
+      </div>
+      <div class="notif-card">
+        <span class="notif-char">R2-D2 &nbsp;·&nbsp; FRONT DOOR</span>
+        <p class="notif-msg">[ urgent whistling ] — Doorbell detected. Perimeter alert.</p>
+        <span class="notif-trigger">TRIGGER: doorbell.front_pressed</span>
+      </div>
+      <div class="notif-card">
+        <span class="notif-char">B1 &nbsp;·&nbsp; FRONT PORCH</span>
+        <p class="notif-msg">"Roger roger. Package delivered to front entrance."</p>
+        <span class="notif-trigger">TRIGGER: delivery.package_detected</span>
+      </div>
+    </div>
+
+    <p class="voice-close">This is what home automation feels like<br>when your house has character.</p>
   </div>
 </section>
 
