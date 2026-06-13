@@ -107,6 +107,34 @@
     .card h3 { font-size: 1rem; font-weight: 600; margin-bottom: 0.6rem; }
     .card p { font-size: 0.875rem; color: #555; line-height: 1.75; }
 
+    .card-featured {
+      grid-column: 1 / -1;
+      border-left: 3px solid #3A8EFF;
+      background: #050505;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .card-featured h3 { font-size: 1.25rem; }
+    .card-featured p { color: #666; max-width: 540px; }
+    .card-featured .card-num { color: #3A8EFF; }
+    .featured-tags {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      flex-shrink: 0;
+    }
+    .tag {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.6rem;
+      letter-spacing: 0.12em;
+      color: #3A8EFF;
+      border: 1px solid #1a3a6a;
+      padding: 0.3rem 0.7rem;
+    }
+
     /* ── Contact ── */
     .contact { padding: 5rem 0; border-bottom: 1px solid #1a1a1a; }
 
@@ -219,10 +247,27 @@
     <p class="section-label">What We Build</p>
     <h2 class="section-title">42 = * = builds anything.</h2>
     <div class="grid">
+
+      <!-- FEATURED -->
+      <div class="card card-featured">
+        <div>
+          <p class="card-num">FEATURED PRODUCT</p>
+          <h3>Robot Brain Board</h3>
+          <p>A KiCad-designed ESP32 control board that standardizes character robot builds — WiFi-native, ESPHome-ready, and manufactured via JLCPCB. The hardware backbone behind every character in the Bench 42 roster.</p>
+        </div>
+        <div class="featured-tags">
+          <span class="tag">ESP32</span>
+          <span class="tag">ESPHome</span>
+          <span class="tag">KiCad</span>
+          <span class="tag">JLCPCB</span>
+          <span class="tag">Home Assistant</span>
+        </div>
+      </div>
+
       <div class="card">
         <p class="card-num">01</p>
-        <h3>Character Robots</h3>
-        <p>Life-size builds with real personality — K2-SO, Battle Droid, R2-D2, and more. Servo motion, custom audio, and full Home Assistant integration.</p>
+        <h3>Character Builds</h3>
+        <p>Life-size character builds — K2-SO, Battle Droid, R2-D2, and more — are the heart of the lab. They showcase what's possible with the Brain Board and ESPHome integrations we design.</p>
       </div>
       <div class="card">
         <p class="card-num">02</p>
@@ -231,14 +276,10 @@
       </div>
       <div class="card">
         <p class="card-num">03</p>
-        <h3>Custom PCBs</h3>
-        <p>KiCad design through JLCPCB fabrication. The Robot Brain Board standardizes ESP32 control across character builds — built to spec, built to sell.</p>
-      </div>
-      <div class="card">
-        <p class="card-num">04</p>
         <h3>Home Assistant &amp; ESPHome</h3>
         <p>WiFi-connected everything. Automations, dashboards, media players, and smart cart integrations. If it has a power switch, it can talk to HA.</p>
       </div>
+
     </div>
   </div>
 </section>
