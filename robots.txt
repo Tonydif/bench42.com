@@ -1,0 +1,6 @@
+# We WANT Google to crawl the page so it can see the "noindex" tag and keep
+# the site out of search results. Blocking crawling here would backfire:
+# Google could still list the URL but never see the noindex instruction.
+# At launch, remove the noindex tag from index.html to allow indexing.
+User-agent: *
+Allow: /
