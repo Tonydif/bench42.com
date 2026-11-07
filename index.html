@@ -6,7 +6,7 @@
   <!-- Pre-launch: remove this line on launch day. -->
   <meta name="robots" content="noindex, nofollow">
   <title>Bench 42 — A house that comes alive</title>
-  <meta name="description" content="You built something beautiful. Bench 42 boards bring your 3D-printed character to life with motion, light and sound, and let your smart home's news arrive in person. Home Assistant ready.">
+  <meta name="description" content="You built something beautiful. Bench 42 boards bring the character you built to life with motion, light and sound, and turn your smart home's notifications into skits. Home Assistant ready.">
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="site.css">
   <style>
@@ -45,6 +45,14 @@
     a.char-card:hover { background: #050a14; }
     .char-card.later { opacity: 0.55; }
 
+    .script { border: 1.5px solid var(--accent-dim); background: #03060c; padding: 1.75rem; max-width: 640px; }
+    .script .cue { font-family: 'Orbitron', sans-serif; font-size: 0.68rem; letter-spacing: 0.14em; color: #8a8a8a; border: 1px solid #222; display: inline-block; padding: 0.35rem 0.7rem; margin-bottom: 1.25rem; }
+    .script .line { display: grid; grid-template-columns: 9.5rem 1fr; gap: 0.75rem; padding: 0.35rem 0; }
+    .script .who { font-family: 'Orbitron', sans-serif; font-size: 0.68rem; letter-spacing: 0.1em; color: var(--accent); padding-top: 0.2rem; }
+    .script .say { color: #e8f0ff; }
+    .script .say.chirp { color: #9cc6ff; font-style: italic; }
+    .script .stage { color: #6f8fbf; font-style: italic; padding: 0.5rem 0 0; }
+    @media (max-width: 640px) { .script .line { grid-template-columns: 1fr; gap: 0; } }
     .signoff { text-align: center; }
     .signoff h2 { margin-bottom: 1rem; }
     .signoff .lead { margin-left: auto; margin-right: auto; }
@@ -76,7 +84,7 @@
   <div class="container">
     <p class="label">A house that comes alive</p>
     <h1>You built something beautiful.<br><span class="still">Why is it just sitting there?</span></h1>
-    <p class="lead">Bench 42 boards bring your character to life with motion, light and sound. Connect it to your smart home, and your home's news stops being a beep. Your character turns, lights up and tells you.</p>
+    <p class="lead">Bench 42 boards bring the character you built to life with motion, light and sound. Connect your smart home, and every notification becomes a skit: your character turns, lights up and performs the news.</p>
     <div class="ctas">
       <a href="#characters" class="btn solid">FIND YOUR CHARACTER</a>
       <a href="mailto:info@bench42.com?subject=Notify%20me%20when%20Bench%2042%20launches" class="btn">NOTIFY ME AT LAUNCH</a>
@@ -88,7 +96,7 @@
 <section>
   <div class="container">
     <p class="label">Same notification. Two houses.</p>
-    <h2>Your house has been trying to tell you things.</h2>
+    <h2>Notifications are boring. Your characters aren't.</h2>
     <div class="houses">
       <div class="house">
         <p class="who">THE TABLET ON THE WALL</p>
@@ -105,6 +113,25 @@
       </div>
     </div>
     <p class="lead" style="margin-top:2rem">Screens are welcome. Keep your dashboards and phone alerts. Now your home's news can also arrive in person, from the character on your shelf.</p>
+  </div>
+</section>
+
+<!-- SKIT -->
+<section>
+  <div class="container">
+    <p class="label">Turn every notification into a skit</p>
+    <h2>Your house sends alerts. Your characters put on a show.</h2>
+    <div class="script">
+      <span class="cue">CUE · GARAGE DOOR OPEN 47 MIN</span>
+      <div class="line"><span class="who">THE ONE ON THE BOOKSHELF</span><span class="say">The garage door is open.</span></div>
+      <div class="line"><span class="who">PIT</span><span class="say chirp">[three urgent chirps]</span></div>
+      <div class="line"><span class="who">THE ONE ON THE BOOKSHELF</span><span class="say">Forty-seven minutes.</span></div>
+      <div class="line"><span class="who">PIT</span><span class="say chirp">[a long, low, disappointed warble]</span></div>
+      <div class="line"><span class="who">THE ONE ON THE BOOKSHELF</span><span class="say">Should we tell someone?</span></div>
+      <div class="line"><span class="who">PIT</span><span class="say chirp">[one short chirp. Turns slowly toward you.]</span></div>
+      <div class="line"><span class="who">THE ONE ON THE BOOKSHELF</span><span class="say">He says we are telling someone.</span></div>
+    </div>
+    <p class="lead" style="margin-top:2rem">Every alert your home sends is a cue. Your characters take it from there: one line or a whole scene. Talkers talk; chirpers chirp, and everyone in the room knows exactly what they meant. Swap skits with other builders in the Skit Library, opening in January.</p>
   </div>
 </section>
 
