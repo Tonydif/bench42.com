@@ -5,21 +5,49 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Pre-launch: remove this line on launch day. -->
   <meta name="robots" content="noindex, nofollow">
-  <title>Bench 42 — Boards that bring characters to life</title>
-  <meta name="description" content="Bench 42 makes compact boards that bring 3D-printed characters to life with motion, light and sound. One board per character. Home Assistant ready. Central Florida.">
+  <title>Bench 42 — A house that comes alive</title>
+  <meta name="description" content="You built something beautiful. Bench 42 boards bring your 3D-printed character to life with motion, light and sound, and let your smart home's news arrive in person. Home Assistant ready.">
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="site.css">
   <style>
     .hero { padding: 6rem 0 5rem; }
+    .hero h1 .still { color: var(--muted); }
+    .hero .ctas { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+
+    /* Two houses: the tablet vs the character */
+    .houses { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+    .house { border: 1.5px solid var(--line); padding: 1.75rem; }
+    .house .who { font-family: 'Orbitron', sans-serif; font-size: 0.62rem; letter-spacing: 0.18em; margin-bottom: 1.25rem; color: #666; }
+    .house.alive .who { color: var(--accent); }
+    .tablet { background: #0d0d0d; border: 1px solid #222; border-radius: 10px; padding: 1.1rem 1.25rem; font-size: 0.9rem; color: #777; }
+    .tablet b { display: block; color: #999; font-weight: 600; margin-bottom: 0.15rem; }
+    .house .caption { color: #555; font-size: 0.85rem; margin-top: 1rem; font-style: italic; }
+    .speaker { display: flex; gap: 1rem; align-items: flex-start; }
+    .eye { flex-shrink: 0; width: 44px; height: 44px; border-radius: 50%; background: radial-gradient(circle, #9cc6ff 0%, var(--accent) 45%, #0b2a55 75%, #000 100%); box-shadow: 0 0 18px 4px rgba(58,142,255,.55); animation: glow 2.4s ease-in-out infinite; }
+    @keyframes glow { 50% { box-shadow: 0 0 30px 9px rgba(58,142,255,.8); } }
+    @media (prefers-reduced-motion: reduce) { .eye { animation: none; } }
+    .bubble { background: #050a14; border: 1px solid var(--accent-dim); border-radius: 10px; padding: 1rem 1.2rem; font-size: 1rem; color: #e8f0ff; }
+    .house.alive .caption { color: #6f8fbf; }
+
+    .pillars { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1.5px; background: var(--line); border: 1.5px solid var(--line); }
+    .pillars .card .moment { color: #ccc; font-size: 0.9rem; margin-top: 0.9rem; border-left: 2px solid var(--accent); padding-left: 0.75rem; font-style: italic; }
+
+    .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; counter-reset: s; }
+    .steps div { counter-increment: s; }
+    .steps div::before { content: counter(s); display: block; font-family: 'Orbitron', sans-serif; font-weight: 900; font-size: 1.6rem; color: var(--accent); margin-bottom: 0.4rem; }
+    .steps h3 { font-size: 1rem; margin-bottom: 0.35rem; }
+    .steps p { color: var(--muted); font-size: 0.92rem; }
+
     .char-card { display: flex; flex-direction: column; text-decoration: none; color: inherit; }
     .char-card .board { font-family: 'Orbitron', sans-serif; font-size: 1.15rem; font-weight: 700; margin: 0.25rem 0 0.6rem; }
     .char-card p { flex: 1; }
     .char-card .go { font-family: 'Orbitron', sans-serif; font-size: 0.65rem; letter-spacing: 0.12em; color: var(--accent); margin-top: 1.25rem; }
     a.char-card:hover { background: #050a14; }
     .char-card.later { opacity: 0.55; }
-    .why { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem; }
-    .why h3 { font-size: 1rem; margin-bottom: 0.4rem; }
-    .why p { color: var(--muted); font-size: 0.92rem; }
+
+    .signoff { text-align: center; }
+    .signoff h2 { margin-bottom: 1rem; }
+    .signoff .lead { margin-left: auto; margin-right: auto; }
   </style>
 </head>
 <body>
@@ -43,31 +71,102 @@
   </div>
 </header>
 
+<!-- HERO -->
 <section class="hero">
   <div class="container">
-    <svg width="56" height="56" viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <g transform="translate(28,28)">
-        <line x1="0" y1="-22" x2="0" y2="22" stroke="#3A8EFF" stroke-width="5.5" stroke-linecap="round"/>
-        <line x1="19.1" y1="-11" x2="-19.1" y2="11" stroke="#3A8EFF" stroke-width="5.5" stroke-linecap="round"/>
-        <line x1="-19.1" y1="-11" x2="19.1" y2="11" stroke="#3A8EFF" stroke-width="5.5" stroke-linecap="round"/>
-      </g>
-    </svg>
-    <h1 style="margin-top:1.75rem">You built<br>the character.<br><span class="accent">Now make it come alive.</span></h1>
-    <p class="lead">Bench 42 makes compact boards that give 3D-printed characters motion, light and sound — one board made for each character, not one-size-fits-all. Home Assistant ready. Out of Central Florida.</p>
-    <a href="#characters" class="btn">FIND YOUR CHARACTER</a>
+    <p class="label">A house that comes alive</p>
+    <h1>You built something beautiful.<br><span class="still">Why is it just sitting there?</span></h1>
+    <p class="lead">Bench 42 boards bring your character to life with motion, light and sound. Connect it to your smart home, and your home's news stops being a beep. Your character turns, lights up and tells you.</p>
+    <div class="ctas">
+      <a href="#characters" class="btn solid">FIND YOUR CHARACTER</a>
+      <a href="mailto:info@bench42.com?subject=Notify%20me%20when%20Bench%2042%20launches" class="btn">NOTIFY ME AT LAUNCH</a>
+    </div>
   </div>
 </section>
 
+<!-- TWO HOUSES -->
+<section>
+  <div class="container">
+    <p class="label">Same notification. Two houses.</p>
+    <h2>Your house has been trying to tell you things.</h2>
+    <div class="houses">
+      <div class="house">
+        <p class="who">THE TABLET ON THE WALL</p>
+        <div class="tablet"><b>Dryer</b>Cycle complete · 7:42 PM</div>
+        <p class="caption">Nobody looked.</p>
+      </div>
+      <div class="house alive">
+        <p class="who">THE CHARACTER YOU BUILT</p>
+        <div class="speaker">
+          <div class="eye" aria-hidden="true"></div>
+          <div class="bubble">“The laundry is done. It has been done for some time.”</div>
+        </div>
+        <p class="caption">Everybody looked.</p>
+      </div>
+    </div>
+    <p class="lead" style="margin-top:2rem">Screens are welcome. Keep your dashboards and phone alerts. Now your home's news can also arrive in person, from the character on your shelf.</p>
+  </div>
+</section>
+
+<!-- PILLARS -->
+<section>
+  <div class="container">
+    <p class="label">What it does</p>
+    <h2>From shelf to cast member.</h2>
+    <div class="pillars">
+      <div class="card">
+        <p class="num">01 · ALIVE</p>
+        <h3>Motion, light and sound</h3>
+        <p>Head turns, glowing eyes, its own sounds. Out of the box, no smart home needed.</p>
+        <p class="moment">Press “Say hello.” It looks up.</p>
+      </div>
+      <div class="card">
+        <p class="num">02 · CONNECTED</p>
+        <h3>Your home's news, in person</h3>
+        <p>Home Assistant ready. Laundry, doorbell, garage, goodnight: your character delivers it.</p>
+        <p class="moment">“Someone is at the door. They seem friendly.”</p>
+      </div>
+      <div class="card">
+        <p class="num">03 · PERFORMING</p>
+        <h3>Voices and skits</h3>
+        <p>Give it a voice and let your characters perform together. Share skits with other builders in the Skit Library.</p>
+        <p class="moment">“The garage has been open for forty-seven minutes. I have stopped counting.”</p>
+      </div>
+      <div class="card">
+        <p class="num">04 · BUILT TO STAY RUNNING</p>
+        <h3>No more jumper-wire nights</h3>
+        <p>One board with real connectors and protected power. The servos get their own supply, so a stalled arm won't reboot the brain. Tested by hand before it ships.</p>
+        <p class="moment">Less maintenance. More show.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section>
+  <div class="container">
+    <p class="label">How it works</p>
+    <h2>Four steps to a house that comes alive.</h2>
+    <div class="steps">
+      <div><h3>Pick your character's board</h3><p>Each board is made for one character, so the outputs match the build.</p></div>
+      <div><h3>Wire it in</h3><p>Servos, light and speaker plug into real connectors. 12 V in, and it's ready.</p></div>
+      <div><h3>Say hello</h3><p>Join your Wi-Fi, press one button, and watch it look up for the first time.</p></div>
+      <div><h3>Give it a job</h3><p>Connect Home Assistant and choose what it announces. It's off the shelf for good.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CHARACTERS -->
 <section id="characters">
   <div class="container">
     <p class="label">Characters</p>
     <h2>Pick the character you're building.</h2>
     <div class="grid">
       <a class="card char-card" href="pit-board.html">
-        <span><span class="tag">Coming soon</span></span>
+        <span><span class="tag">Coming December 8</span></span>
         <p class="num">PIT CHARACTER</p>
         <span class="board">Pit Board</span>
-        <p>Four servos for head, neck, hip and arm, a light ring and sound. Assembled and tested. $119.</p>
+        <p>Head, neck, hip and arm motion, glowing eyes and sound. Assembled, flashed and tested by hand. $119.</p>
         <span class="go">SEE THE BOARD →</span>
       </a>
       <div class="card char-card later">
@@ -80,24 +179,27 @@
   </div>
 </section>
 
+<!-- GOOD TO KNOW -->
 <section>
   <div class="container">
-    <p class="label">Why Bench 42</p>
-    <h2>Made for the character, not the catalog.</h2>
-    <div class="why">
-      <div><h3>Fits your build</h3><p>Each board is sized and wired for one character, so there's no guessing which outputs you need.</p></div>
-      <div><h3>Tested in our own cast</h3><p>Every design runs in our own characters first. If it couldn't survive a backward battery or a stalled servo, we redesigned it.</p></div>
-      <div><h3>Smart-home ready</h3><p>ESPHome and Home Assistant out of the box — or run it standalone. No cloud required.</p></div>
-      <div><h3>A real person answers</h3><p>Questions go to the bench, and the answers become free guides for everyone.</p></div>
+    <div class="note">
+      <h3>GOOD TO KNOW</h3>
+      <ul class="list">
+        <li>Works on its own out of the box. Home notifications need Home Assistant.</li>
+        <li>AI voices and skits use third-party services (for example, ElevenLabs). They're paid, separate subscriptions, not included and not affiliated with Bench 42.</li>
+        <li>Hobby electronics for builders. Not a toy; not for children under 14. Not UL, CE or FCC certified as a finished device.</li>
+        <li>No movie or character audio is included. Not affiliated with or endorsed by any film studio, franchise or model designer.</li>
+      </ul>
     </div>
   </div>
 </section>
 
-<section id="contact">
+<!-- SIGN-OFF / CONTACT -->
+<section id="contact" class="signoff">
   <div class="container">
-    <p class="label">Contact</p>
-    <h2>Ask the bench.</h2>
-    <p class="lead">Building a character and wondering what fits? Email us.</p>
+    <p class="label">Ask the bench</p>
+    <h2>It's been on the shelf long enough.</h2>
+    <p class="lead">Building a character and wondering what fits? Want to hear the day it launches? Email us. A real person on the bench answers.</p>
     <a class="btn" href="mailto:info@bench42.com">INFO@BENCH42.COM</a>
   </div>
 </section>
@@ -107,7 +209,7 @@
     <div>
       <a href="#">Terms</a><a href="#">Privacy</a><a href="#">Returns &amp; Warranty</a><a href="#">Shipping</a><a href="#">Safety</a>
     </div>
-    <p>© 2026 Bench 42 LLC · Central Florida</p>
+    <p>© 2026 Bench 42 LLC · Central Florida · A house that comes alive.</p>
   </div>
 </footer>
 
