@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Pre-launch: remove this line on launch day. -->
+  <meta name="robots" content="noindex, nofollow">
+  <title>Pit Board – Animatronic Controller | Bench 42</title>
+  <meta name="description" content="Bring a 3D-printed pit character to life: 4 servos, a light ring and sound on one compact 12 V board. Assembled, flashed and tested. Home Assistant ready.">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site.css">
+  <style>
+    .hero-grid { display: grid; grid-template-columns: 1.05fr 1fr; gap: 3rem; align-items: center; }
+    .price { font-family: 'Orbitron', sans-serif; font-size: 2.2rem; font-weight: 900; margin: 0.5rem 0 0.25rem; }
+    .price-note { color: #777; font-size: 0.85rem; margin-bottom: 1.75rem; }
+    figure figcaption { font-size: 0.72rem; color: #555; margin-top: 0.5rem; }
+    .two { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+    .two h3 { font-family: 'Orbitron', sans-serif; font-size: 0.8rem; letter-spacing: 0.12em; color: #777; margin-bottom: 0.75rem; text-transform: uppercase; }
+    @media (max-width: 800px) { .hero-grid, .two { grid-template-columns: 1fr; gap: 2rem; } }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container header-inner">
+    <a href="index.html" aria-label="Bench 42 home">
+      <svg class="logo-svg" viewBox="0 0 280 54" xmlns="http://www.w3.org/2000/svg">
+        <g transform="translate(26,27)">
+          <line x1="0" y1="-19" x2="0" y2="19" stroke="#fff" stroke-width="5" stroke-linecap="round"/>
+          <line x1="16.5" y1="-9.5" x2="-16.5" y2="9.5" stroke="#fff" stroke-width="5" stroke-linecap="round"/>
+          <line x1="-16.5" y1="-9.5" x2="16.5" y2="9.5" stroke="#fff" stroke-width="5" stroke-linecap="round"/>
+        </g>
+        <text x="58" y="36" font-family="Orbitron,'Arial Black',sans-serif" font-weight="900" font-size="28" fill="#fff">BENCH 42</text>
+      </svg>
+    </a>
+    <nav>
+      <a href="index.html#characters">Characters</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section>
+  <div class="container hero-grid">
+    <div>
+      <p class="label">For the Pit Character</p>
+      <h1>Pit Board</h1>
+      <p class="lead">Wire it, power it, watch it move. Head, neck, hip and arm motion, a glowing light ring and sound — one compact board, assembled, flashed and tested.</p>
+      <div>
+        <span class="tag">4 servos + 2 spare</span><span class="tag">Light ring</span><span class="tag">Sound</span><span class="tag">Home Assistant ready</span>
+      </div>
+      <p class="price">$119</p>
+      <p class="price-note">Assembled and tested · ships from Florida · US only for now</p>
+      <a class="btn solid" href="mailto:info@bench42.com?subject=Pit%20Board%20%E2%80%94%20notify%20me">NOTIFY ME WHEN IT'S IN STOCK</a>
+    </div>
+    <figure>
+      <img src="img/pit-board-boxed.webp" alt="A Bench 42 board in an anti-static bag inside a kraft shipping box" width="2000" height="1333">
+      <figcaption>Packaging illustration. Actual board may differ.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- WHAT IT DOES -->
+<section>
+  <div class="container">
+    <p class="label">What it does</p>
+    <h2>Everything a pit character needs to come alive.</h2>
+    <div class="grid">
+      <div class="card"><p class="num">01 · MOTION</p><h3>Four servos, two spares</h3><p>Head swivel, head tilt, hip and arm — smooth and independent. Two extra channels for whatever you add next.</p></div>
+      <div class="card"><p class="num">02 · POWER</p><h3>Servo spikes don't cause reboots</h3><p>The servos get their own 5 A supply, separate from the brain. A stalled arm won't take the whole character down.</p></div>
+      <div class="card"><p class="num">03 · LIGHT</p><h3>Light ring output</h3><p>Drive a NeoPixel (WS2812) ring for eyes or a chest glow, in any color you like.</p></div>
+      <div class="card"><p class="num">04 · SOUND</p><h3>Your own sound clips</h3><p>Plays clips from a microSD card. Bring your own sounds — or make new ones.</p></div>
+      <div class="card"><p class="num">05 · SMART HOME</p><h3>Home Assistant ready</h3><p>Built on ESPHome. Trigger moves, sounds and light from your automations — or run it standalone.</p></div>
+      <div class="card"><p class="num">06 · PROTECTED</p><h3>Forgiving by design</h3><p>Reverse-polarity protection and a resettable fuse on the 12 V input, for the mistakes everyone makes once.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- BOX + SPECS -->
+<section>
+  <div class="container two">
+    <div>
+      <h3>In the box</h3>
+      <ul class="list">
+        <li>Pit Board — assembled, flashed and tested</li>
+        <li>M3 standoffs and screws</li>
+        <li>Quick-start card with a link to the wiring guide</li>
+      </ul>
+      <h3 style="margin-top:2rem">You supply</h3>
+      <ul class="list dim">
+        <li>12 V power supply</li>
+        <li>Servos (standard size, e.g. metal-gear)</li>
+        <li>NeoPixel light ring and speaker</li>
+        <li>microSD card with your sounds</li>
+        <li>The printed character itself</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Specs</h3>
+      <table class="specs">
+        <tr><th>Size</th><td>100 × 66 mm, M3 mounting holes</td></tr>
+        <tr><th>Power in</th><td>12 V DC, lever terminal (no screwdriver)</td></tr>
+        <tr><th>Protection</th><td>Reverse polarity · resettable fuse</td></tr>
+        <tr><th>Servo outputs</th><td>6 (4 used by the Pit Character)</td></tr>
+        <tr><th>Servo power</th><td>Dedicated 5 A supply</td></tr>
+        <tr><th>Light</th><td>1 × WS2812 / NeoPixel output</td></tr>
+        <tr><th>Sound</th><td>microSD clips, speaker terminal</td></tr>
+        <tr><th>Wireless</th><td>Wi-Fi</td></tr>
+        <tr><th>Software</th><td>ESPHome · Home Assistant</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- GOOD TO KNOW -->
+<section>
+  <div class="container">
+    <div class="note">
+      <h3>GOOD TO KNOW</h3>
+      <ul class="list">
+        <li>Hobby electronics for builders. Not a toy; not for children under 14.</li>
+        <li>Not UL, CE or FCC certified as a finished device.</li>
+        <li>No movie or character audio is included or supplied.</li>
+        <li>Not affiliated with or endorsed by any film studio, franchise or model designer.</li>
+        <li>Each board is tested before it ships. Support is by email and the online guides.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <p class="label">Questions?</p>
+    <h2>Ask the bench.</h2>
+    <p class="lead">Wondering whether it fits your build? Email us — every question helps us write a better guide.</p>
+    <a class="btn" href="mailto:info@bench42.com?subject=Pit%20Board%20question">INFO@BENCH42.COM</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container footer-inner">
+    <div>
+      <a href="#">Terms</a><a href="#">Privacy</a><a href="#">Returns &amp; Warranty</a><a href="#">Shipping</a><a href="#">Safety</a>
+    </div>
+    <p>© 2026 Bench 42 LLC · Central Florida</p>
+  </div>
+</footer>
+
+</body>
+</html>
