@@ -53,6 +53,8 @@
     .script .say.chirp { color: #9cc6ff; font-style: italic; }
     .script .stage { color: #6f8fbf; font-style: italic; padding: 0.5rem 0 0; }
     @media (max-width: 640px) { .script .line { grid-template-columns: 1fr; gap: 0; } }
+    .duo { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5px; background: var(--line); border: 1.5px solid var(--line); }
+    .duo .card .moment { color: #ccc; font-size: 0.9rem; margin-top: 0.9rem; border-left: 2px solid var(--accent); padding-left: 0.75rem; font-style: italic; }
     .signoff { text-align: center; }
     .signoff h2 { margin-bottom: 1rem; }
     .signoff .lead { margin-left: auto; margin-right: auto; }
@@ -136,6 +138,28 @@
 </section>
 
 <!-- PILLARS -->
+<!-- CLEAN BUILD + HOUSE: the two headlines -->
+<section>
+  <div class="container">
+    <p class="label">Build it once. Enjoy it every day.</p>
+    <h2>Plugs in clean. Plays with your house.</h2>
+    <div class="duo">
+      <div class="card">
+        <p class="num">PLUGS IN CLEAN</p>
+        <h3>One board. Every connection plugs in.</h3>
+        <p>Power, servos, light and speaker all plug straight into one compact solution, assembled and tested by hand. Your build goes together neatly and stays that way, show after show.</p>
+        <p class="moment">More showtime, less bench time.</p>
+      </div>
+      <div class="card">
+        <p class="num">PLAYS WITH YOUR HOUSE</p>
+        <h3>Your home's news, performed.</h3>
+        <p>Connect Home Assistant and your character takes its cues from the house: the doorbell, the laundry, the garage, goodnight. Every notification becomes a skit.</p>
+        <p class="moment">“Goodnight. The doors are locked. I checked twice.”</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section>
   <div class="container">
     <p class="label">What it does</p>
@@ -161,9 +185,9 @@
       </div>
       <div class="card">
         <p class="num">04 · BUILT TO PERFORM</p>
-        <h3>Ready for every show</h3>
-        <p>One clean solution with real connectors and dedicated power for smooth motion. Tested by hand before it ships.</p>
-        <p class="moment">Plug in. Power up. Showtime.</p>
+        <h3>Build it once</h3>
+        <p>One board, and every connection plugs in: power, servos, light and speaker. Dedicated power keeps every move smooth. Tested by hand before it ships.</p>
+        <p class="moment">Build it once. Enjoy it every day.</p>
       </div>
     </div>
   </div>
@@ -176,7 +200,7 @@
     <h2>Four steps to a house that comes alive.</h2>
     <div class="steps">
       <div><h3>Pick your character's solution</h3><p>Each solution is made for one character, so the outputs match the build.</p></div>
-      <div><h3>Wire it in</h3><p>Servos, light and speaker plug into real connectors. 12 V in, and it's ready.</p></div>
+      <div><h3>Plug it in</h3><p>Servos, light and speaker plug straight into one board. 12 V in, and it's ready.</p></div>
       <div><h3>Say hello</h3><p>Join your Wi-Fi, press one button, and watch it look up for the first time.</p></div>
       <div><h3>Give it a job</h3><p>Connect Home Assistant and choose what it announces. It's off the shelf for good.</p></div>
     </div>
