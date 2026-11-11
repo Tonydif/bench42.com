@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Pre-launch: remove this line on launch day. -->
   <meta name="robots" content="noindex, nofollow">
-  <title>Pit Board – Animatronic Controller | Bench 42</title>
-  <meta name="description" content="Bring the pit character you built to life: 4 servos, a light ring and sound on one compact 12 V board. Assembled, flashed and tested. Home Assistant ready.">
+  <title>Bench 42 for Pit – the complete animatronic solution</title>
+  <meta name="description" content="Bring the pit character you built to life: 4 servos, a light ring and sound in one compact 12 V solution. Assembled, flashed and tested. Home Assistant ready.">
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="site.css">
   <style>
@@ -17,6 +17,24 @@
     .two { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
     .two h3 { font-family: 'Orbitron', sans-serif; font-size: 0.8rem; letter-spacing: 0.12em; color: #777; margin-bottom: 0.75rem; text-transform: uppercase; }
     @media (max-width: 800px) { .hero-grid, .two { grid-template-columns: 1fr; gap: 2rem; } }
+    .levels { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+    .levels th, .levels td { text-align: left; padding: 1rem 0.75rem; border-bottom: 1px solid #111; vertical-align: top; }
+    .levels thead th { font-family: 'Orbitron', sans-serif; font-size: 0.62rem; letter-spacing: 0.16em; color: #777; font-weight: 400; text-transform: uppercase; border-bottom: 1px solid #222; }
+    .levels tbody th { font-weight: 600; color: #fff; width: 22%; }
+    .levels tbody th small { display: block; font-weight: 400; color: var(--muted); font-size: 0.82rem; margin-top: 0.2rem; }
+    .levels td { color: #bbb; }
+    .dots { font-family: 'Orbitron', sans-serif; color: var(--accent); letter-spacing: 0.2em; white-space: nowrap; }
+    .dots span { color: #2a2a2a; }
+    .dots + em { display: block; font-style: normal; color: var(--muted); font-size: 0.82rem; margin-top: 0.2rem; }
+    .levels-note { color: var(--muted); font-size: 0.85rem; margin-top: 1.25rem; }
+    @media (max-width: 800px) {
+      .levels thead { display: none; }
+      .levels, .levels tbody, .levels tr, .levels th, .levels td { display: block; width: 100%; }
+      .levels tr { padding: 1.25rem 0; border-bottom: 1px solid #1a1a1a; }
+      .levels th, .levels td { border: 0; padding: 0.3rem 0; }
+      .levels tbody th { width: 100%; }
+      .levels td::before { content: attr(data-label); display: block; font-family: 'Orbitron', sans-serif; font-size: 0.58rem; letter-spacing: 0.16em; color: #666; text-transform: uppercase; margin-top: 0.6rem; }
+    }
   </style>
 </head>
 <body>
@@ -45,18 +63,18 @@
   <div class="container hero-grid">
     <div>
       <p class="label">For the Pit Character</p>
-      <h1>Pit Board</h1>
-      <p class="lead">It turns. It glows. It chirps at the house's news like it's opening night. Head, neck, hip and arm motion, glowing eyes and sound on one compact board, assembled, flashed and tested by hand.</p>
+      <h1>Bench 42 for Pit</h1>
+      <p class="lead">It turns. It glows. It chirps at the house's news like it's opening night. Head, neck, hip and arm motion, glowing eyes and sound in one compact solution, assembled, flashed and tested by hand.</p>
       <div>
         <span class="tag">4 servos + 2 spare</span><span class="tag">Glowing eyes</span><span class="tag">Sound</span><span class="tag">Home Assistant ready</span>
       </div>
       <p class="price">$119</p>
       <p class="price-note">Assembled and tested · ships from Florida · US only for now</p>
-      <a class="btn solid" href="mailto:info@bench42.com?subject=Pit%20Board%20%E2%80%94%20notify%20me">NOTIFY ME WHEN IT'S IN STOCK</a>
+      <a class="btn solid" href="mailto:info@bench42.com?subject=Bench%2042%20for%20Pit%20%E2%80%94%20notify%20me">NOTIFY ME WHEN IT'S IN STOCK</a>
     </div>
     <figure>
-      <img src="img/pit-board-boxed.webp" alt="A Bench 42 board in an anti-static bag inside a kraft shipping box" width="2000" height="1333">
-      <figcaption>Packaging illustration. Actual board may differ.</figcaption>
+      <img src="img/pit-board-boxed.webp" alt="Bench 42 for Pit in an anti-static bag inside a kraft shipping box" width="2000" height="1333">
+      <figcaption>Packaging illustration. Actual product may differ.</figcaption>
     </figure>
   </div>
 </section>
@@ -68,12 +86,46 @@
     <h2>Everything your Pit needs to steal the show.</h2>
     <div class="grid">
       <div class="card"><p class="num">01 · MOTION</p><h3>It looks at you</h3><p>Head swivel, head tilt, hip and arm, smooth and independent. Two spare channels for whatever you add next.</p></div>
-      <div class="card"><p class="num">02 · POWER</p><h3>The show doesn't crash</h3><p>The servos get their own 5 A supply, separate from the brain. A stalled arm won't take the whole character down.</p></div>
+      <div class="card"><p class="num">02 · POWER</p><h3>Smooth, every scene</h3><p>Motion and brain each run on their own dedicated power, so every move is smooth and steady, show after show.</p></div>
       <div class="card"><p class="num">03 · LIGHT</p><h3>Eyes that glow</h3><p>Drive a 7-LED RGB jewel for eyes or a chest glow, in any color you like. Works great with the Adafruit NeoPixel Jewel (7 LED), or any 7-LED WS2812-compatible jewel.</p></div>
       <div class="card"><p class="num">04 · SOUND</p><h3>A chirp for every scene</h3><p>Plays clips from a microSD card: chitters, beeps, warbles, whatever your Pit has to say. Your first skit is waiting on the quick-start page.</p></div>
       <div class="card"><p class="num">05 · SMART HOME</p><h3>Every notification becomes a skit</h3><p>Built on ESPHome for Home Assistant. Laundry done? A happy chirp. Garage open too long? An urgent warble and a slow head turn. Or run it standalone.</p></div>
-      <div class="card"><p class="num">06 · PROTECTED</p><h3>Forgiving by design</h3><p>Reverse-polarity protection and a resettable fuse on the 12 V input, for the mistakes everyone makes once.</p></div>
+      <div class="card"><p class="num">06 · READY</p><h3>Plug in and play</h3><p>Tool-free 12 V lever terminal and built-in protection. Connect, power up, and it's showtime.</p></div>
     </div>
+  </div>
+</section>
+
+<!-- LEVELS: difficulty + what you need -->
+<section id="levels">
+  <div class="container">
+    <p class="label">Pick your level</p>
+    <h2>Start with a chirp. Grow into a whole show.</h2>
+    <table class="levels">
+      <thead>
+        <tr><th>Level</th><th>Difficulty</th><th>What you'll need</th><th>Skills it uses</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>1 · Standalone<small>Your Pit moves, glows and chirps, controlled from its own web page.</small></th>
+          <td data-label="Difficulty"><span class="dots">●<span>●●</span></span><em>Easy</em></td>
+          <td data-label="What you'll need">12 V power supply, servos, a 7-LED light jewel, a speaker, a microSD card with your sounds, and a phone or computer on your Wi-Fi.</td>
+          <td data-label="Skills it uses">Plugging in connectors, copying files to a microSD card, joining Wi-Fi.</td>
+        </tr>
+        <tr>
+          <th>2 · Smart home<small>Your house cues the show: doorbell, laundry, garage, goodnight.</small></th>
+          <td data-label="Difficulty"><span class="dots">●●<span>●</span></span><em>Moderate</em></td>
+          <td data-label="What you'll need">Everything in Level 1, plus Home Assistant running on your home network, and the sensors or devices you want as cues.</td>
+          <td data-label="Skills it uses">Adding a device to Home Assistant, building a simple automation.</td>
+        </tr>
+        <tr>
+          <th>3 · Full skits<small>A scripted scene: talking characters deliver the lines, and your Pit reacts on cue.</small></th>
+          <td data-label="Difficulty"><span class="dots">●●●</span><em>Advanced</em></td>
+          <td data-label="What you'll need">Everything in Level 2, plus at least one talking character, and an AI voice service subscription (for example, ElevenLabs).</td>
+          <td data-label="Skills it uses">Writing a short script, timing cues in a Home Assistant script.</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="levels-note">Step-by-step video guides for every level are on the way: setup, ideas for skits, and fixes for common snags. Home Assistant and AI voice services are separate products from other companies; any subscriptions are paid to them directly.</p>
   </div>
 </section>
 
@@ -83,7 +135,7 @@
     <div>
       <h3>In the box</h3>
       <ul class="list">
-        <li>Pit Board — assembled, flashed and tested</li>
+        <li>Bench 42 for Pit board: assembled, flashed and tested</li>
         <li>M3 standoffs and screws</li>
         <li>Quick-start card: wiring, Wi-Fi setup and your first skit</li>
       </ul>
@@ -99,7 +151,7 @@
     <div>
       <h3>Specs</h3>
       <table class="specs">
-        <tr><th>Size</th><td>100 × 66 mm, M3 mounting holes</td></tr>
+        <tr><th>Board size</th><td>100 × 66 mm, M3 mounting holes</td></tr>
         <tr><th>Power in</th><td>12 V DC, lever terminal (no screwdriver)</td></tr>
         <tr><th>Protection</th><td>Reverse polarity · resettable fuse</td></tr>
         <tr><th>Servo outputs</th><td>6 (4 used by the Pit Character)</td></tr>
@@ -124,7 +176,7 @@
         <li>No movie or character audio is included or supplied.</li>
         <li>Not affiliated with or endorsed by any film studio, franchise or model designer.</li>
         <li>Adafruit and NeoPixel are trademarks of Adafruit Industries. Bench 42 is not affiliated with or endorsed by Adafruit; we name their jewel because it's a good fit.</li>
-        <li>Each board is tested before it ships. Support is by email and the online guides.</li>
+        <li>Each one is tested by hand before it ships. Support is by email and the online guides.</li>
       </ul>
     </div>
   </div>
@@ -136,7 +188,7 @@
     <p class="label">Questions?</p>
     <h2>Ask the bench.</h2>
     <p class="lead">Wondering whether it fits your build? Email us — every question helps us write a better guide.</p>
-    <a class="btn" href="mailto:info@bench42.com?subject=Pit%20Board%20question">INFO@BENCH42.COM</a>
+    <a class="btn" href="mailto:info@bench42.com?subject=Bench%2042%20for%20Pit%20question">INFO@BENCH42.COM</a>
   </div>
 </section>
 
