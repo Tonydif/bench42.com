@@ -14,6 +14,36 @@
     .hero h1 .still { color: var(--muted); }
     .hero .ctas { display: flex; flex-wrap: wrap; gap: 0.75rem; }
 
+    /* Hero stage: a notification arrives, the character performs it */
+    .hero-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 3rem; align-items: center; }
+    @media (max-width: 860px) { .hero-grid { grid-template-columns: 1fr; gap: 2.5rem; } }
+    .stage { position: relative; max-width: 440px; width: 100%; justify-self: center; }
+    .notif { display: flex; gap: 0.8rem; align-items: center; background: #0d0d0d; border: 1px solid #262626; border-radius: 14px; padding: 0.75rem 1rem; max-width: 300px; margin-left: auto; box-shadow: 0 8px 24px rgba(0,0,0,.6);
+             opacity: 0; transform: translateY(-14px) scale(.97); transition: opacity .45s ease, transform .45s ease; }
+    .notif .ico { flex-shrink: 0; width: 34px; height: 34px; border-radius: 9px; background: #1a1a1a; display: grid; place-items: center; }
+    .notif .ico svg { width: 18px; height: 18px; }
+    .notif .t { font-size: 0.72rem; letter-spacing: 0.06em; color: #888; text-transform: uppercase; }
+    .notif .m { font-size: 0.95rem; color: #ddd; }
+    .notif .when { margin-left: auto; font-size: 0.7rem; color: #555; align-self: flex-start; }
+    .stage.s1 .notif { opacity: 1; transform: none; }
+    .perf { display: flex; align-items: flex-end; gap: 0.5rem; margin-top: 1.25rem; }
+    .bot { width: 190px; flex-shrink: 0; overflow: visible; }
+    .bot .head { transform-origin: 120px 160px; transform-box: view-box; transition: transform .6s cubic-bezier(.3,1.4,.5,1); }
+    .stage.s2 .bot .head { transform: rotate(-7deg); }
+    .bot .eyeL, .bot .eyeR, .bot .ant { fill: #123a72; transition: fill .3s; }
+    .stage.s2 .bot .eyeL, .stage.s2 .bot .eyeR, .stage.s2 .bot .ant { fill: #6fb0ff; }
+    .bot .eyes-glow { opacity: 0; transition: opacity .3s; }
+    .stage.s2 .bot .eyes-glow { opacity: 1; }
+    .stage.s3 .bot .eyes-glow { animation: talk .38s ease-in-out infinite alternate; }
+    @keyframes talk { from { opacity: .55; } to { opacity: 1; } }
+    .say { position: relative; flex: 1; margin-bottom: 120px; background: #050a14; border: 1px solid var(--accent-dim); border-radius: 12px; padding: 0.9rem 1.05rem; font-size: 1rem; color: #e8f0ff; min-height: 3.2rem;
+           opacity: 0; transform: translateY(8px); transition: opacity .4s ease, transform .4s ease; }
+    .say::before { content: ""; position: absolute; left: -7px; bottom: 18px; width: 12px; height: 12px; background: #050a14; border-left: 1px solid var(--accent-dim); border-bottom: 1px solid var(--accent-dim); transform: rotate(45deg); }
+    .stage.s3 .say { opacity: 1; transform: none; }
+    .shelf { height: 2px; background: linear-gradient(90deg, transparent, #2a2a2a 15%, #2a2a2a 85%, transparent); margin-top: -2px; }
+    @media (max-width: 480px) { .bot { width: 130px; } .say { margin-bottom: 84px; font-size: 0.92rem; } }
+    @media (prefers-reduced-motion: reduce) { .notif, .say, .bot .head { transition: none; } .stage.s3 .bot .eyes-glow { animation: none; } }
+
     /* Two houses: the tablet vs the character */
     .houses { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
     .house { border: 1.5px solid var(--line); padding: 1.75rem; }
@@ -83,7 +113,8 @@
 
 <!-- HERO -->
 <section class="hero">
-  <div class="container">
+  <div class="container hero-grid">
+    <div>
     <p class="label">A house that comes alive</p>
     <h1>You built something beautiful.<br><span class="still">Why is it just sitting there?</span></h1>
     <p class="lead">Bench 42 solutions bring the character you built to life with motion, light and sound. Connect your smart home, and every notification becomes a skit: your character turns, lights up and performs the news.</p>
@@ -91,8 +122,61 @@
       <a href="#characters" class="btn solid">FIND YOUR CHARACTER</a>
       <a href="mailto:info@bench42.com?subject=Notify%20me%20when%20Bench%2042%20launches" class="btn">NOTIFY ME AT LAUNCH</a>
     </div>
+    </div>
+    <div class="stage s1 s2 s3" id="stage" role="img" aria-label="Illustration: a smart-home notification arrives, and a 3D-printed character on a shelf lights up and announces it out loud.">
+      <div class="notif" aria-hidden="true">
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#3A8EFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg></span>
+        <span><span class="t" id="nT">Front door</span><br><span class="m" id="nM">Someone is here</span></span>
+        <span class="when">now</span>
+      </div>
+      <div class="perf" aria-hidden="true">
+        <svg class="bot" viewBox="0 0 240 250" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern id="layers" width="6" height="4" patternUnits="userSpaceOnUse"><rect width="6" height="4" fill="#191919"/><rect y="3" width="6" height="1" fill="#0e0e0e"/></pattern>
+            <filter id="glow" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="6"/></filter>
+          </defs>
+          <rect x="62" y="168" width="116" height="80" rx="20" fill="url(#layers)" stroke="#333" stroke-width="2"/>
+          <rect x="104" y="150" width="32" height="22" rx="6" fill="#161616" stroke="#333" stroke-width="2"/>
+          <circle cx="120" cy="206" r="7" fill="#0b1f3d" stroke="#1a3a6a" stroke-width="2"/>
+          <g class="head">
+            <line x1="120" y1="34" x2="120" y2="14" stroke="#2c2c2c" stroke-width="4" stroke-linecap="round"/>
+            <circle class="ant" cx="120" cy="11" r="6"/>
+            <rect x="34" y="32" width="172" height="122" rx="30" fill="url(#layers)" stroke="#383838" stroke-width="2"/>
+            <rect x="58" y="62" width="124" height="58" rx="24" fill="#05080f" stroke="#1a3a6a" stroke-width="2"/>
+            <g class="eyes-glow" filter="url(#glow)"><circle cx="98" cy="91" r="14" fill="#3A8EFF"/><circle cx="142" cy="91" r="14" fill="#3A8EFF"/></g>
+            <circle class="eyeL" cx="98" cy="91" r="11"/>
+            <circle class="eyeR" cx="142" cy="91" r="11"/>
+          </g>
+        </svg>
+        <p class="say" id="say">“Someone is at the door. They seem friendly.”</p>
+      </div>
+      <div class="shelf"></div>
+    </div>
   </div>
 </section>
+<script>
+(function () {
+  var st = document.getElementById('stage'); if (!st) return;
+  var S = [
+    ['Front door', 'Someone is here', '“Someone is at the door. They seem friendly.”'],
+    ['Laundry', 'Dryer cycle complete', '“The laundry is done. It has been done for some time.”'],
+    ['Garage', 'Open for 47 minutes', '“The garage has been open for forty-seven minutes. I have stopped counting.”'],
+    ['Goodnight', 'All doors locked', '“Goodnight. The doors are locked. I checked twice.”']
+  ], i = 0;
+  var nT = document.getElementById('nT'), nM = document.getElementById('nM'), say = document.getElementById('say');
+  function play() {
+    var s = S[i]; nT.textContent = s[0]; nM.textContent = s[1]; say.textContent = s[2];
+    st.className = 'stage';
+    setTimeout(function () { st.className = 'stage s1'; }, 150);
+    setTimeout(function () { st.className = 'stage s1 s2'; }, 950);
+    setTimeout(function () { st.className = 'stage s1 s2 s3'; }, 1500);
+    setTimeout(function () { st.className = 'stage s1 s2'; }, 4600);
+    i = (i + 1) % S.length;
+  }
+  if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) { st.className = 'stage s1 s2 s3'; return; }
+  play(); setInterval(play, 6000);
+})();
+</script>
 
 <!-- TWO HOUSES -->
 <section>
